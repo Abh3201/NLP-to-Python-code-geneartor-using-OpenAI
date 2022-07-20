@@ -4,7 +4,7 @@
   "description": "A program for converting NLP to Python Code using openai API.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\""
   },
   "author": "Abhishek Yadav",
   "license": "ISC",
