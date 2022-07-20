@@ -1,0 +1,20 @@
+{
+  "name": "nlptopython",
+  "version": "1.0.0",
+  "description": "A program for converting NLP to Python Code using openai API.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Abhishek Yadav",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.1",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "nodemon": "^2.0.19",
+    "openai": "^3.0.0"
+  }
+}

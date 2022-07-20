@@ -1,0 +1,50 @@
+<html>
+  <body>
+    <center>
+      <h1>NLP to Python by using OpenAI</h1>
+    </center>
+    <br /><br />
+    <form action="#">
+      <textarea
+        type="text"
+        rows="5"
+        cols="70"
+        id="text"
+        placeholder="For better result write in points, for example 
+1.Create an array of 10 random integer
+2.Find the number at index 2"
+      ></textarea>
+      <br /><br />
+      <button onclick="genCode()" id="btn">Generate Code</button>
+    </form>
+    <p style="white-space: pre" id="code"></p>
+
+    <script>
+      function htmlDecode(input) {
+        var e = document.createElement("div");
+        e.innerHTML = input;
+        return e.childNodes.length === 0 ? "" : e.childNodes[0].nodeValue;
+      }
+      var API_URL = JSON.parse(htmlDecode("<%= JSON.stringify(API_URL) %>"));
+      function genCode() {
+        const text = document.getElementById("text").value;
+        document.getElementById("btn").disabled = true;
+        const option = {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ text: text }),
+        };
+        fetch(API_URL, option)
+          .then((response) => response.text())
+          .then((data) => {
+            console.log(data);
+            document.getElementById("btn").disabled = false;
+            document.getElementById("code").innerHTML = data;
+          });
+        console.log(text);
+      }
+    </script>
+  </body>
+</html>
