@@ -12,6 +12,11 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      API_URL : ${{secrets.API_URL}}
+      PORT : ${{secrets.PORT}}
+      HOSTNAME : ${{secrets.HOSTNAME}}
+      OPENAI_API_KEY : ${{secrets.OPENAI_API_KEY}}
 
     steps:
       - uses: actions/checkout@v2
